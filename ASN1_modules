@@ -1,0 +1,16 @@
+GuardFTPCryptoStruct DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+	ASN1_RSA_AES ::=SEQUENCE{
+		edata OCTET STRING,
+		ekey OCTET STRING,
+		iv OCTET STRING,
+		signatureType SignatureType, OPTIONAL
+		signature OCTET STRING OPTIONAL
+	}
+
+	SignatureType ::=CHOICE{
+		rsa_sha256 VisibleString "RSA_SHA256",
+		rsa_sha384 VisibleString "RSA_SHA384",
+		rsa_sha512 VisibleString "RSA_SHA512"
+	}
+	END
